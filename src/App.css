@@ -1,0 +1,120 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.RotatingLogo {
+  width: 450px; 
+  height: 450px;
+  top: -54px;  
+  right: 178px; 
+  animation: rotate 10s linear infinite, fadeIn 1s ease-in-out;
+  position: absolute;  
+  z-index: 2;
+}
+
+
+.StaticLogo {
+  top: -133px;
+  transform: rotate(25deg);
+  width: 500px; 
+  height: 500px;
+  position: absolute; 
+  z-index: 1; 
+  right:134px;
+  animation: fadeIn 1s ease-in-out;
+  
+}
+
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (min-width: 1200px) {
+  .Altura{
+    height: 300px;
+    margin-left: 180px;
+    animation: caida 1s ease-in-out, fadeIn 1s ease-in-out; 
+  }}
+
+@keyframes color-change-animation {
+  0% {
+    color:#212B36 ; 
+  }
+
+  25% {
+    color:#4E20D1 ; 
+  }
+
+  50% {
+    color:#2065D1 ;
+  }
+
+  75% {
+    color:#4E20D1 ; 
+  }
+
+  100% {
+    color: #212B36; 
+  }
+}
+
+
+.color-change {
+  animation: color-change-animation 4s linear infinite; 
+}
+
+@media (max-width: 1200px) {
+  .Ocultar {
+    display: none; 
+  }}
+
+@keyframes caida {
+  from {
+    transform: translateY(-5%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
