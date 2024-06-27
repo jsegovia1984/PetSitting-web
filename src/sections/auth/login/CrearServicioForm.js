@@ -175,6 +175,7 @@ export default function CrearServicioForm() {
          <MenuItem value="2 Horas">2 Horas</MenuItem>
          <MenuItem value="3 Horas">3 Horas</MenuItem>
          <MenuItem value="4 Horas">4 Horas</MenuItem>
+         <MenuItem value="1 dia">1 dia</MenuItem>
         </Select>
       </FormControl>
     </Box>

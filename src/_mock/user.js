@@ -79,7 +79,7 @@ const users = [...Array(24)].map((_, index) => ({
   estado: sample(['Publicado', 'Pausado']),
 
   estadoComentario: sample(['Rechazado','Aceptado','Pendiente Revision']),
-  comentario: sample(['Muy bueno','muy malo','Like si lo ves en 2023','Tipazo','Primer comentario!','excelente profesor'])
+  comentario: sample(['Muy bueno','muy malo','Like si lo ves en 2023','Tipazo','Primer comentario!','excelente profesioanal'])
 
 }));
 

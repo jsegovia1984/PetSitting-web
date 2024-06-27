@@ -560,7 +560,7 @@ export default function UserPage() {
           <Box mt={1} mb={2} backgroundColor='white' align='center'>
             <Typography variant="h4" gutterBottom>
 
-            <strong>Mensaje del alumno</strong>
+            <strong>Mensaje del Cliente</strong>
             </Typography>
           </Box>
 

@@ -198,7 +198,7 @@ export default function RegisterPage() {
       <>
       <Stack spacing={2} sx={{ p: 20, px: 3 , alignItems: "center"}}>
         <Typography align="center" variant="h3">
-          El profesor próximamente se pondrá en contacto con vos. ¡Gracias por usar Pet Sitting! 
+          El profesional próximamente se pondrá en contacto con vos. ¡Gracias por usar Pet Sitting! 
         </Typography>
         <Button  variant="outlined" sx={{width:"50%"}} onClick={handleClick2} size="large" >Ver más servicios</Button>
       </Stack>

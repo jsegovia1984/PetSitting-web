@@ -74,11 +74,10 @@ export default function AppNewsUpdate({ title, subheader, list, ...other }) {
     
     
   }
-
   return (
     <Card {...other}>
 
-    {!auth ? (
+    {auth ? (
 
 
   <>{(state ? (<>
@@ -134,7 +133,6 @@ export default function AppNewsUpdate({ title, subheader, list, ...other }) {
       </Card>
   );
 }
-
 // ----------------------------------------------------------------------
 
 NewsItem.propTypes = {

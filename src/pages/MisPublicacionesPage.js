@@ -670,6 +670,8 @@ export default function UserPage() {
          <MenuItem value="2 Horas">2 Horas</MenuItem>
          <MenuItem value="3 Horas">3 Horas</MenuItem>
          <MenuItem value="4 Horas">4 Horas</MenuItem>
+         <MenuItem value="1 dia">1 dia</MenuItem>
+
         </Select>
       </FormControl>
     </Box>
@@ -714,7 +716,7 @@ export default function UserPage() {
         <TextField name="descripcion" label="Descripcion" multiline rows={2} value={descripcion} size="small"
           onChange={(e) => setDescripcion(e.target.value)}/>
           
-        <TextField name="costo" label="Costo (USD)" type="number" value={costo} size="small"
+        <TextField name="costo" label="Costo ($)" type="number" value={costo} size="small"
           onChange={(e) => setCosto(e.target.value)}/>
 
 

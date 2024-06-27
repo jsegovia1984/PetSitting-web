@@ -71,11 +71,11 @@ export default function DashboardAppPage() {
   }
   
   const handleClick2 = () => {
-    navigate('/login');  // para iniciar sesion (profesor)
+    navigate('/login');  // para iniciar sesion (profesional)
   }
   
   const handleClick3 = () => {
-    navigate('/dashboard/mispublicaciones');  // para ir a mis publicaciones (profesor)
+    navigate('/dashboard/mispublicaciones');  // para ir a mis publicaciones (profesional)
   }
 
   const handleAuth = () => {
