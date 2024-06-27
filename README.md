@@ -7,7 +7,7 @@
 
 1. Instalar NodeJS (https://nodejs.org/en) y VS Code (https://code.visualstudio.com/download)
 2. Abir VS Code
-3. Darle a "clone github repository" y pegar `https://github.com/kinjatoro/API`
+3. Darle a "clone github repository" y pegar `https://github.com/`
 4. Seleccionar la carpeta donde querés que se instale (no es necesario crear una nueva, al clonar el proyecto se crea una carpeta contenedora automáticamente).
 5. Abrir la terminal (CTRL ñ)
 6. Ejecutar el comando `npm init react-app temporal`
@@ -20,7 +20,7 @@
 
 Usuario ya creado, con datos cargados:
 * Email: `jsegovia@gmail.com`
-* Contraseña: `jsegovia`
+* Contraseña: `unix`
 
 Documentación MUI -> https://mui.com/material-ui/getting-started/
 

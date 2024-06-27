@@ -70,7 +70,7 @@ export default function LoginForm() {
       } 
 
     } catch (error) {
-      alert("Por favor, verifica los datos ingresados")
+      alert("Por favor, verifica usuario y clave o registrate si no tenes cuenta.")
     }
   }
 

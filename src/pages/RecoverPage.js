@@ -72,6 +72,7 @@ export default function LoginPage() {
       return;
     }
     const mail = correo;
+    console.log(mail);
     try {
       axios.post('http://173.230.135.41/api/users/enviarmail', {
         mail, 

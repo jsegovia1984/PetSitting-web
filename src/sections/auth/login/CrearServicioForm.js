@@ -149,11 +149,11 @@ export default function CrearServicioForm() {
         <MenuItem value="Cuidado Diario y Paseo">Cuidado Diario y Paseo</MenuItem>
         <MenuItem value="Alojamiento y Hospedaje">Alojamiento y Hospedaje</MenuItem>
         <MenuItem value="Entrenamiento y Comportamiento">Entrenamiento y Comportamiento</MenuItem>
-        <MenuItem value="Salud y Bienestar">Arte</MenuItem>
-        <MenuItem value="Aseo y Estética">Baile</MenuItem>
-        <MenuItem value="Nutrición y Dietética">Apoyo Escolar</MenuItem>
-        <MenuItem value="Recreación y Ejercicio">Apoyo Universitario</MenuItem>
-        <MenuItem value="Transporte y Logística">Cocina</MenuItem>
+        <MenuItem value="Salud y Bienestar">Salud y Bienestar</MenuItem>
+        <MenuItem value="Aseo y Estética">Aseo y Estética</MenuItem>
+        <MenuItem value="Nutrición y Dietética">Nutrición y Dietética</MenuItem>
+        <MenuItem value="Recreación y Ejercicio">Recreación y Ejercicio</MenuItem>
+        <MenuItem value="Transporte y Logística">Transporte y Logística</MenuItem>
         
         <MenuItem value="Otros">Otros</MenuItem>
         </Select>

@@ -4,35 +4,7 @@ import { sample } from 'lodash';
 // ----------------------------------------------------------------------
 
 const CLASES = [
-  'Clases de Natación',
-  'Clases de Piano',
-  'Clases de Guitarra',
-  'Clases de Yoga',
-  'Clases de Pintura',
-  'Clases de Cocina',
-  'Clases de Baile',
-  'Clases de Fotografía',
-  'Clases de Idiomas',
-  'Clases de Fitness',
-  'Clases de Programación',
-  'Clases de Canto',
-  'Clases de Arte Digital',
-  'Clases de Jardinería',
-  'Clases de Diseño',
-  'Clases de Arquitectura',
-  'Clases de Escritura',
-  'Clases de Costura',
-  'Clases de Marketing ',
-  'Clases de Teatro',
-  'Clases de Meditación',
-  'Clases de Repostería',
-  'Clases de Robótica',
-  'Clases de Ciencias',
-  'Clases de Matemáticas',
-  'Clases de Historia',
-  'Clases de Ciencias',
-  'Clases de Psicología',
-  'Clases de Economía',
+ 
 ];
 
 

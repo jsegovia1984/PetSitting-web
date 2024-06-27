@@ -59,6 +59,8 @@ export default function RegisterPage() {
   }
 
   const [showPassword, setShowPassword] = useState(false);
+  const [showRePassword, setShowRePassword] = useState(false);
+
   const { auth, setAuth } = useAuth();
   const [bool, setBool] = useState(true);
 
@@ -83,8 +85,14 @@ export default function RegisterPage() {
 
 
   const handleClick2 = () => {
+    
     if (!validateFields()) {
       alert('Por favor, completá los campos obligatorios.');
+      return;
+    }
+
+    if (!validatePass()){
+      alert("Los password no son iguales, por favor verifiquelo");
       return;
     }
     setBool(false);
@@ -101,8 +109,17 @@ export default function RegisterPage() {
       nombre.trim() === '' ||
       correo.trim() === '' ||
       telefono.trim() === '' ||
-      password.trim() === ''
+      password.trim() === '' ||
+      repassword.trim() === ''
+      
     ) {
+      return false; 
+    }
+    return true; 
+  };
+
+   const validatePass = () => {
+    if (password.trim() !== repassword.trim() ) {
       return false; 
     }
     return true; 
@@ -175,10 +192,16 @@ export default function RegisterPage() {
       }
 
     } catch (error) {
-      console.error("Error de registro", error);
+
+      if (error.response && error.response.status === 400) {
+        alert('El correo electrónico ingresado ya se encuentra registrado.');
+        navigate('/login/', { replace: true });
+
+      } else {
+        alert('Ocurrió un error inesperado. No se pudo completar la creación del evento.');
+      }
 
  
-      alert('Ocurrió un error inesperado. No se pudo completar la creación del evento.');
     }
 
 
@@ -240,7 +263,7 @@ export default function RegisterPage() {
               label="Contraseña"
               type={showPassword ? 'text' : 'password'}
               value={password}
-             onChange={(e) => setPassword(e.target.value)}
+              onChange={(e) => setPassword(e.target.value)}
               InputProps={{
             endAdornment: (
               <InputAdornment position="end">
@@ -258,7 +281,7 @@ export default function RegisterPage() {
 <TextField
               name="Contraseña-2"
               label="Repetir Contraseña"
-              type={showPassword ? 'text' : 'password'}
+              type={showRePassword ? 'text' : 'password'}
               value={repassword}
              onChange={(e) => setRePassword(e.target.value)}
               InputProps={{
@@ -266,8 +289,8 @@ export default function RegisterPage() {
               <InputAdornment position="end">
 
                 
-                <IconButton onClick={() => setShowPassword(!showPassword)} edge="end">
-                  <Iconify icon={showPassword ? 'eva:eye-fill' : 'eva:eye-off-fill'} />
+                <IconButton onClick={() => setShowRePassword(!showRePassword)} edge="end">
+                  <Iconify icon={showRePassword ? 'eva:eye-fill' : 'eva:eye-off-fill'} />
                 </IconButton>
               </InputAdornment>
             ),
