@@ -330,7 +330,7 @@ export default function RegisterPage() {
 
 
 
-            <TextField name="titulo" label="Título" value={titulo}
+            <TextField name="titulo" label="Título / Profesion" value={titulo}
             onChange={(e) => setTitulo(e.target.value)}/>
             <TextField name="experiencia" label="Experiencia" value={experiencia}
             onChange={(e) => setExperiencia(e.target.value)} multiline rows={5}/>

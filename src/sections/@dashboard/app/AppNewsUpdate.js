@@ -56,7 +56,7 @@ export default function AppNewsUpdate({ title, subheader, list, ...other }) {
           userid: aux[0].userid,
           serviceid: id,
           nombreservicio: aux[0].titulo,
-          alumno: name,
+          cliente: name,
           texto: text,
           titulo: aux[0].titulo,
           calificacion: rating,
@@ -137,14 +137,14 @@ export default function AppNewsUpdate({ title, subheader, list, ...other }) {
 
 NewsItem.propTypes = {
   news: PropTypes.shape({
-    alumno: PropTypes.string,
+    cliente: PropTypes.string,
     texto: PropTypes.string,
     calificacion: PropTypes.number,
   }),
 };
 
 function NewsItem({ news }) {
-  const { alumno, texto, calificacion,avatarSrc } = news;
+  const { cliente, texto, calificacion,avatarSrc } = news;
 
   return (
     <Stack direction="row" alignItems="center" spacing={2} sx={{borderTop: '1px solid #f0f0f0', }}>
@@ -152,7 +152,7 @@ function NewsItem({ news }) {
 
       <Box sx={{ minWidth: 240, flexGrow: 1 }}>
         <Link color="inherit" variant="subtitle2" underline="hover" noWrap>
-          {alumno}
+          {cliente}
         </Link>
 
         <Typography variant="body2" sx={{ color: 'text.secondary', textAlign: "justify", pr:2 }}>

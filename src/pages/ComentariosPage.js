@@ -36,7 +36,7 @@ import USERLIST from '../_mock/user';
 // ----------------------------------------------------------------------
 
 const TABLE_HEAD = [
-  { id: 'name', label: 'Alumno', alignRight: false },
+  { id: 'name', label: 'cliente', alignRight: false },
   { id: 'servicio', label: 'Servicio', alignRight: false },
 
   { id: 'comentario', label: 'Comentario', alignRight: false },
@@ -71,7 +71,7 @@ function applySortFilter(array, comparator, query) {
     return a[1] - b[1];
   });
   if (query) {
-    return filter(array, (_user) => _user.alumno.toLowerCase().indexOf(query.toLowerCase()) !== -1);
+    return filter(array, (_user) => _user.cliente.toLowerCase().indexOf(query.toLowerCase()) !== -1);
   }
   return stabilizedThis.map((el) => el[0]);
 }
@@ -161,7 +161,7 @@ export default function UserPage() {
 
   const handleSelectAllClick = (event) => {
     if (event.target.checked) {
-      const newSelecteds = USERLIST.map((n) => n.alumno);
+      const newSelecteds = USERLIST.map((n) => n.cliente);
       setSelected(newSelecteds);
       return;
     }
@@ -325,8 +325,8 @@ export default function UserPage() {
                 />
                 <TableBody>
                   {filteredUsers.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
-                    const { _id, alumno, nombreservicio, texto,estado,avatarSrc } = row;
-                    const selectedUser = selected.indexOf(alumno) !== -1;
+                    const { _id, cliente, nombreservicio, texto,estado,avatarSrc } = row;
+                    const selectedUser = selected.indexOf(cliente) !== -1;
 
                     return (
                       <TableRow hover key={_id} tabIndex={-1} role="checkbox" selected={selectedUser}>
@@ -336,7 +336,7 @@ export default function UserPage() {
                           <Stack direction="row" alignItems="center" spacing={2}>
                             <Avatar alt={avatarSrc} src={avatarSrc} />
                             <Typography variant="subtitle2" noWrap>
-                              {alumno}
+                              {cliente}
                             </Typography>
                           </Stack>
                         </TableCell>

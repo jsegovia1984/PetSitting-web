@@ -37,7 +37,7 @@ import USERLIST from '../_mock/user';
 // ----------------------------------------------------------------------
 
 const TABLE_HEAD = [
-  { id: 'name', label: 'Alumno', alignRight: false },
+  { id: 'name', label: 'cliente', alignRight: false },
   { id: 'servicio', label: 'Servicio', alignRight: false },
   { id: 'telefono', label: 'Telefono', alignRight: false },
   { id: 'mail', label: 'Correo Electrónico', alignRight: false },
@@ -73,7 +73,7 @@ function applySortFilter(array, comparator, query) {
     return a[1] - b[1];
   });
   if (query) {
-    return filter(array, (_user) => _user.alumno.toLowerCase().indexOf(query.toLowerCase()) !== -1);
+    return filter(array, (_user) => _user.cliente.toLowerCase().indexOf(query.toLowerCase()) !== -1);
   }
   return stabilizedThis.map((el) => el[0]);
 }
@@ -150,10 +150,10 @@ export default function UserPage() {
 
   const [openModal4, setOpenModal4] = useState(false);
 
-  const handleOpenMenu = (event, id, alumno) => {
+  const handleOpenMenu = (event, id, cliente) => {
     setOpen(event.currentTarget);
     setidEvento(id);
-    setAlumnoActual(alumno);
+    setclienteActual(cliente);
   };
 
   const handleCloseMenu = () => {
@@ -175,7 +175,7 @@ export default function UserPage() {
   };
 
   const [mensajeActual, setMensajeActual] = useState();
-  const [alumnoActual, setAlumnoActual] = useState();
+  const [clienteActual, setclienteActual] = useState();
 
   const handleMensajeBack = async () => {
     const config = {
@@ -194,7 +194,7 @@ export default function UserPage() {
       // Crea el token
       const aux = response.data.data;
 
-      const mensajeFiltrado = aux.filter(mensaje => mensaje.alumno === alumnoActual);
+      const mensajeFiltrado = aux.filter(mensaje => mensaje.cliente === clienteActual);
 
       setMensajeActual(mensajeFiltrado[0]);
 
@@ -215,7 +215,7 @@ export default function UserPage() {
 
   const handleSelectAllClick = (event) => {
     if (event.target.checked) {
-      const newSelecteds = USERLIST.map((n) => n.alumno);
+      const newSelecteds = USERLIST.map((n) => n.cliente);
       setSelected(newSelecteds);
       return;
     }
@@ -389,8 +389,8 @@ export default function UserPage() {
                 />
                 <TableBody>
                   {filteredUsers.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
-                    const { _id, userid, alumno, servicio, telefono, email,horario, estado,avatarSrc } = row;
-                    const selectedUser = selected.indexOf(alumno) !== -1;
+                    const { _id, userid, cliente, servicio, telefono, email,horario, estado,avatarSrc } = row;
+                    const selectedUser = selected.indexOf(cliente) !== -1;
 
                     
                     return (
@@ -400,9 +400,9 @@ export default function UserPage() {
 
                         <TableCell component="th" scope="row" padding="none">
                           <Stack direction="row" alignItems="center" spacing={2}>
-                            <Avatar alt={alumno} src={avatarSrc} />
+                            <Avatar alt={cliente} src={avatarSrc} />
                             <Typography variant="subtitle2" noWrap>
-                              {alumno}
+                              {cliente}
                             </Typography>
                           </Stack>
                         </TableCell>
@@ -422,7 +422,7 @@ export default function UserPage() {
                         </TableCell>
 
                         <TableCell align="right">
-                          <IconButton size="large" color="inherit" onClick={(event) => handleOpenMenu(event, _id,alumno)}>
+                          <IconButton size="large" color="inherit" onClick={(event) => handleOpenMenu(event, _id,cliente)}>
                             <Iconify icon={'eva:more-vertical-fill'} />
                           </IconButton>
                         </TableCell>
@@ -538,7 +538,9 @@ export default function UserPage() {
 
           <Box backgroundColor='white'>
             <Grid align="center">
-              <Button sx= {{ml: 3}} variant="outlined" size="large" color="primary" onClick={handleCloseModal4}>Volver atrás</Button>
+              <Button sx= {{ml: 3}} variant="outlined" size="large" color="primary" onClick={handleEliminarBack}>Si</Button>
+
+              <Button sx= {{ml: 3}} variant="outlined" size="large" color="primary" onClick={handleCloseModal3}>No</Button>
             </Grid>
           </Box>
         </Container>

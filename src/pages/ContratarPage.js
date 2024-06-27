@@ -51,7 +51,7 @@ export default function RegisterPage() {
 
   const [telefono, setTelefono ] = useState('');
   const [email, setEmail ] = useState('');
-  const [alumno, setAlumno ] = useState('');
+  const [cliente, setcliente ] = useState('');
   const [horario, setHorario ] = useState('');
   const [mensaje, setMensaje ] = useState('');
 
@@ -61,7 +61,7 @@ export default function RegisterPage() {
 
   const handleClick = async () => {
 
-    if (telefono.trim() === '' || email.trim() === '' || horario.trim() === '' || mensaje.trim() === '' || alumno.trim() === '') {
+    if (telefono.trim() === '' || email.trim() === '' || horario.trim() === '' || mensaje.trim() === '' || cliente.trim() === '') {
       alert('No pueden haber campos vacíos');
       return;
     }
@@ -79,7 +79,7 @@ export default function RegisterPage() {
         "http://173.230.135.41/api/contratos/publicar",{
           userid: aux[0].userid,
           servicio: aux[0].titulo,
-          alumno,
+          cliente,
           telefono,
           email,
           horario,
@@ -91,7 +91,7 @@ export default function RegisterPage() {
       await axios.post(
         "http://173.230.135.41/api/mensajes/publicar",{
           userid: aux[0].userid,
-          alumno,
+          cliente,
           mensaje,
         }
         
@@ -183,7 +183,7 @@ export default function RegisterPage() {
             </Typography>
 
             <Stack spacing={2}>
-        <TextField name="alumno" label="Nombre" multiline value={alumno} onChange={(e) => setAlumno(e.target.value)}/>
+        <TextField name="cliente" label="Nombre" multiline value={cliente} onChange={(e) => setcliente(e.target.value)}/>
         <TextField name="telefono" label="Telefono" value={telefono} onChange={(e) => setTelefono(e.target.value)}/>
         <TextField name="mail" label="Mail" value={email} onChange={(e) => setEmail(e.target.value)} />
         <TextField name="horario" label="Horario de referencia" value={horario} onChange={(e) => setHorario(e.target.value)}/>

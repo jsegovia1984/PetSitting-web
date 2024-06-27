@@ -67,7 +67,7 @@ export default function DashboardAppPage() {
 
 
   const handleClick = () => {
-    navigate('/dashboard/blog');  // para ver publicaciones (alumno)
+    navigate('/dashboard/blog');  // para ver publicaciones (cliente)
   }
   
   const handleClick2 = () => {
@@ -105,8 +105,8 @@ export default function DashboardAppPage() {
               </Grid>
               
               <Grid sx={{display: "flex", flexDirection: 'row', alignItems: 'center', justifyContent: "center", mt:3}}>
-                <Button variant = "contained" size ='large' sx={{mx:2}} onClick={handleClick} >Soy Cliente </Button> 
-                <Button variant = "outlined" size ='large' onClick={ auth ? handleClick3 : handleClick2} >Soy Pet sitter</Button>
+                <Button variant = "contained" size ='large' sx={{mx:2}} onClick={handleClick} > Servicios </Button> 
+                <Button variant = "outlined" size ='large' onClick={ auth ? handleClick3 : handleClick2} >Iniciar Sesion</Button>
               </Grid>
             </Grid>
           </Grid>
