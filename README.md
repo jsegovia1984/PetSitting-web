@@ -19,7 +19,7 @@
 ---
 
 Usuario ya creado, con datos cargados:
-* Email: `jsegovia@gmail.com`
+* Email: `jorge.anton.segovia@gmail.com`
 * Contraseña: `unix`
 
 Documentación MUI -> https://mui.com/material-ui/getting-started/

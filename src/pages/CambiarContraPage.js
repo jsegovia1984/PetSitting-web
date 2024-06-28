@@ -4,7 +4,9 @@ import { Navigate, useNavigate,useParams  } from 'react-router-dom';
 // @mui
 import axios from 'axios';
 import { styled } from '@mui/material/styles';
-import { Link, Container, Typography, Divider, Stack, Button, TextField,InputAdornment,IconButton } from '@mui/material';
+import {  Container, Typography, Stack, Button, TextField,InputAdornment,IconButton, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@mui/material';
+
+// Link,Divider,
 // hooks
 import useResponsive from '../hooks/useResponsive';
 // components
@@ -72,6 +74,11 @@ export default function CambiarContraPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [showPassword2, setShowPassword2] = useState(false);
 
+  const [dialogMessage, setDialogMessage] = useState('');
+  const [open, setOpen] = useState(false);
+
+
+
   const handleClick = async () => {
     
     if (password !== password2) {
@@ -94,8 +101,12 @@ export default function CambiarContraPage() {
       } 
 
     } catch (error) {
-      console.log(error);
-      alert("Por favor, verifica los datos ingresados")
+
+      setDialogMessage("Por favor, verifica usuario y clave o registrate si no tenes cuenta.");
+      setOpen(true);
+      // console.log(error);
+      // alert("Por favor, verifica los datos ingresados")
+
     }
 
     
@@ -113,7 +124,9 @@ const handleClick3 = async () => {
 
 }
 
-
+const handleClose = () => {
+  setOpen(false);
+};
 
 
 
@@ -213,6 +226,18 @@ const handleClick3 = async () => {
         ))}
         
       </StyledRoot>
+
+      <Dialog open={open} onClose={handleClose}>
+        <DialogTitle>Aviso</DialogTitle>
+        <DialogContent>
+          <DialogContentText>{dialogMessage}</DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose} color="primary">
+            Cerrar
+          </Button>
+        </DialogActions>
+      </Dialog>
     </>
   );
 }
